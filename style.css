@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&family=Roboto+Mono:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+/* @font-face {
+    font-family: 'Android';
+    scr: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+} não funcionou */
+
+:root {
+    --cor01: #ffffff;
+    --cor02: #18cf64;
+    --cor03: #204d1a;
+    --corfundo: #8ffdbb;
+    --corhaside: #65d1a4b6;
+    --corlink: #c0f3cd;
+
+    --fonte-h1: 'Playfair Display', Verdana, serif;
+    /* 'Roboto Mono', monospace; */
+    --fonte-padrao: Verdana, Arial, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --font-android: 'Android', cursive;
+}
+
+* { /*configurações gerais */
+    margin: 0px;
+    padding: 0px;
+}
+
+/* img {
+    width: 100%;
+} */
+
+body {
+    font-family: var(--fonte-padrao);
+    background-color: var(--corfundo);
+}
+
+header {
+    color: var(--cor01);
+    background-image: linear-gradient(to bottom, var(--cor02), var(--cor03));
+    text-align: center;
+    min-height: 150px; /* altura mínima */
+    padding-top: 20px; /* desgrudar de cima -> ou padding-top, ou margin-top no header > h1 */
+}
+header > h1 {
+    font-family: var(--fonte-h1);
+    font-size: 3em;
+    margin-bottom: 10px; /* desgrudar do parágrafo de baixo */
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.507);
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1em;
+    max-width: 600px; /* quebrar espaço quando a tela for diminuída - responsividade */
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    margin: auto; /* para centralizar */
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.507);
+}
+
+nav {
+    box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.541);
+    text-align: left;
+    padding: 10px; /* desgrudar e enlarguecer */
+    padding-right: 40px;
+    margin-bottom: 5px;
+}
+
+nav > a {
+    color: var(--cor01);
+    text-decoration: none; /* retirar sublinhado de um link */
+    padding: 12px; /* separação */
+    border-radius: 5px;
+    transition-duration: 0.5s; /* tempo de transição de um a p/ outro */
+}
+
+nav > a:hover { /* quando passar o mouse em cima */
+    background-color: var(--cor02);
+    color: var(--cor03);
+    font-weight: bold;
+}
+
+main {
+    background-color: var(--cor01);
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto; /* deixar texto centralizado,  independente do dispositivo */
+    margin-bottom: 20px; /* afastamento do rodapé */
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.527);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pq {
+    max-width: 350px;
+    /* width: 50%; para diminuí-la */
+    display: block; /* imagens, por padrão, não são blocos */ 
+    margin: auto;
+}
+
+main h1 {
+    color: var(--cor03);
+    font-family: 'Playfair Display', Verdana, serif;
+    font-weight: bold;
+    padding-bottom: 0px; /* afastar */
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--font-android);
+    color: var(--cor03);
+    background-image: linear-gradient(to right, var(--corfundo), transparent);
+    font-size: 1.5em;
+    text-indent: 7px;
+    font-weight: normal;
+}
+
+main p {
+    padding: 15px 0px; /* afastar */
+    text-align: justify;
+    text-indent: 30px; /* espaço no início de parágrafos */
+    line-height: 1.5em; /* espaço entre uma linha e outra */
+}
+
+main strong {
+    color: var(--cor03);
+}
+
+main a {
+    text-decoration: none; /* retirar sublinhado de links */
+    background-color: var(--corlink);
+    color: var(--cor03);
+    font-weight: bold;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+/* responsividade do vídeo */
+div.video {
+    background-color: var(--cor03);
+    /* margin-bottom: 30px; não funcionou */
+    margin: 0px -30px  30px -30px;
+    padding: 20px;
+    padding-bottom: 35%;
+    position: relative;
+}
+
+div.video > iframe { /* personalizar o vídeo que veio do yt */
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 60%;
+    height: 90%;
+}
+
+aside {
+    padding: 20px; /* afastar */
+    background-color: #0fa09473;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.39);
+}
+
+aside h3 {
+    background-color: var(--cor03);
+    color: var(--cor01);
+    padding: 10px 15px 5px 15px;
+    margin: -20px -20px 0px -20px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside p {
+    padding: 5px; /* afastar */
+}
+
+aside > ul {
+    /* list-style-type: '\2714\00A0\00A0'; botar emoji - não é compatível com todos os navegadores */
+    padding-left: 5px;
+    list-style-position: inside;
+    columns: 2; /* é recomendado 2, +2 fica desorganizado ao diminuir o site */
+}
+
+footer {
+    background-color: var(--cor03);
+    color: var(--cor01);
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer > p > a { /* ou footer > p > a, ou footer a */
+    text-decoration: none;
+    color: var(--cor01);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
